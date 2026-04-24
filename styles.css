@@ -1,0 +1,137 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    background: #0f0f0f;
+    color: #eaeaea;
+}
+
+/* CONTAINER */
+.container {
+    padding: 30px 20px 90px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* LOGO */
+.logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212,175,55,0.4);
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+/* DESCRIPTION */
+.description {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* HIGHLIGHT */
+.highlight {
+    background: linear-gradient(145deg, #1a1a1a, #111);
+    border: 1px solid #d4af37;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.highlight p {
+    margin: 0;
+    color: #d4af37;
+}
+
+.highlight span {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* MENU SECTION */
+.menu-section {
+    background: #141414;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+
+/* TITLE */
+.menu-section h2 {
+    color: #d4af37;
+    border-bottom: 1px solid #d4af37;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+/* ITEM */
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+/* CONTROLS */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.controls button {
+    background: #d4af37;
+    border: none;
+    color: black;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.qty {
+    min-width: 20px;
+    text-align: center;
+}
+
+/* TOTAL BAR */
+.total-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    color: #d4af37;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    border-top: 1px solid #d4af37;
+}

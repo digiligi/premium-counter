@@ -1,22 +1,236 @@
-/* FONT */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap');
-
-* {
-    box-sizing: border-box;
-}
-
 body {
     margin: 0;
-    font-family: 'Oswald', sans-serif;
-    background: #0f0f0f;
-    color: #eaeaea;
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: #f5e6c8;
 }
 
-/* CONTAINER */
 .container {
-    padding: 30px 20px 90px;
+    padding: 20px;
     max-width: 500px;
-    margin: 0 auto;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    color: gold;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+/* LANGUAGES */
+.languages {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.languages span {
+    border: 1px solid gold;
+    padding: 4px 8px;
+    margin: 3px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* HIGHLIGHT */
+.highlight {
+    background: linear-gradient(135deg, gold, #f5d97a);
+    color: black;
+    padding: 12px;
+    border-radius: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+.menu-section {
+    margin-bottom: 25px;
+}
+
+.menu-section h2 {
+    border-bottom: 1px solid gold;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* ITEMS */
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #222;
+    cursor: pointer;
+}
+
+.item:hover {
+    color: gold;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* THUMBNAILS */
+.item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* BADGES */
+.badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.best {
+    background: gold;
+    color: black;
+}
+
+.new {
+    background: #7df9ff;
+    color: black;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+}
+
+/* ACTIVE MODAL */
+.modal.active {
+    display: flex;
+}
+
+/* MODAL CONTENT */
+.modal-content {
+    background: #111;
+    padding: 20px;
+    width: 90%;
+    max-width: 320px;
+    border-radius: 12px;
+    text-align: center;
+
+    transform: scale(0.8);
+    opacity: 0;
+    animation: popup 0.3s ease forwards;
+}
+
+/* IMAGE FIXED FORMAT */
+.modal-content img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* CLOSE */
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* FLAGS */
+.flags {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.flags img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    border: 1px solid #444;
+    transition: 0.2s;
+}
+
+.flags img:hover {
+    transform: scale(1.1);
+}
+
+/* CALCULATOR */
+.calc-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.price {
+    display: block;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.controls {
+    display: flex;
+    gap: 5px;
+}
+
+.controls button {
+    width: 26px;
+    height: 26px;
+    background: gold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.total-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background: linear-gradient(to top, #000, rgba(0,0,0,0.7));
+    backdrop-filter: blur(10px);
+
+    border-top: 1px solid #333;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    padding: 15px 20px;
+    font-size: 18px;
+    color: gold;
+
+    z-index: 1000;
+}
+
+/* da sadržaj ne bude sakriven iza bara */
+.container {
+    padding-bottom: 80px;
+}
+
+.info {
+    flex: 1;
 }
 
 /* LOGO */
@@ -26,112 +240,20 @@ body {
 }
 
 .logo img {
-    width: 85px;
-    height: 85px;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
     border-radius: 50%;
-    border: 2px solid #d4af37;
-    box-shadow: 0 0 10px rgba(212,175,55,0.4);
+
+    background: linear-gradient(135deg, gold, #f5d97a);
+    padding: 2px;
 }
 
-/* TITLE */
-.title {
-    text-align: center;
-    font-size: 28px;
-    letter-spacing: 2px;
-}
 
-/* DESCRIPTION */
-.description {
-    text-align: center;
-    color: #aaa;
-    margin-bottom: 25px;
-    font-size: 14px;
-}
-
-/* HIGHLIGHT */
-.highlight {
-    background: linear-gradient(145deg, #1a1a1a, #111);
-    border: 1px solid #d4af37;
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.highlight p {
-    margin: 0;
-    color: #d4af37;
-}
-
-.highlight span {
-    display: block;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-/* MENU SECTION */
-.menu-section {
-    background: #141414;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
-}
-
-/* TITLE */
-.menu-section h2 {
-    color: #d4af37;
-    border-bottom: 1px solid #d4af37;
-    display: inline-block;
-    margin-bottom: 12px;
-}
-
-/* ITEM */
-.item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #222;
-}
-
-.item:last-child {
-    border-bottom: none;
-}
-
-/* CONTROLS */
-.controls {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.controls button {
-    background: #d4af37;
-    border: none;
-    color: black;
-    width: 26px;
-    height: 26px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.qty {
-    min-width: 20px;
-    text-align: center;
-}
-
-/* TOTAL BAR */
-.total-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #111;
-    color: #d4af37;
-    text-align: center;
-    padding: 15px;
-    font-size: 18px;
-    border-top: 1px solid #d4af37;
+/* ANIMATION */
+@keyframes popup {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

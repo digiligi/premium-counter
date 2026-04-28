@@ -1,149 +1,192 @@
 <!DOCTYPE html>
 <html lang="bs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium meni</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Lounge</title>
 
-<div class="flags">
-    <img src="images/ba.png" onclick="setLang('ba')">
-    <img src="images/en.png" onclick="setLang('en')">
-    <img src="images/de.png" onclick="setLang('de')">
-</div>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
 
 <div class="container">
 
     <div class="logo">
-    <img src="images/logo.jpg" alt="Logo">
+        <img src="images/logo.png" alt="Logo">
     </div>
 
-    <h1 class="title" data-key="title">Gold Cafe</h1>
-    <p class="subtitle" data-key="subtitle">Premium ponuda • Kvalitet • Ambijent</p>
+    <h1 class="title">Golden Lounge</h1>
 
-    <div class="highlight" data-key="highlight">
-        Happy Hour 08:00 – 11:00 <br><strong>Kafa 1 KM</strong>
+    <p class="description">
+        Premium ambijent • Dobrodošli
+    </p>
+
+    <div class="highlight">
+        <p>Happy Hour 08:00 – 11:00</p>
+        <span>Kafa samo 1 KM</span>
     </div>
 
+    <!-- TOPLI NAPICI -->
     <div class="menu-section">
-    <h2 data-key="hot">Topli napici</h2>
+        <h2>Topli napici</h2>
 
-    <div class="item" data-price="2" onclick="openItem('espresso')">
-        <img src="images/espresso.jpg">
-        <div class="info">
-            <span data-key="espresso">Espresso</span>
-            <span class="price">2 KM</span>
+        <div class="item" data-price="2">
+            <span>Espresso (2 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
         </div>
-        <div class="controls" onclick="event.stopPropagation()">
-            <button onclick="changeQty(this,-1)">-</button>
-            <span class="qty">0</span>
-            <button onclick="changeQty(this,1)">+</button>
+
+        <div class="item" data-price="3">
+            <span>Cappuccino (3 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
+
+        <div class="item" data-price="3.5">
+            <span>Latte (3.5 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
+
+        <div class="item" data-price="2.5">
+            <span>Čaj (2.5 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
         </div>
     </div>
 
-    <div class="item" data-price="3" onclick="openItem('cappuccino')">
-        <img src="images/cappuccino.jpg">
-        <div class="info">
-            <span data-key="cappuccino">Cappuccino</span>
-            <span class="price">3 KM</span>
+    <!-- GAZIRANI -->
+    <div class="menu-section">
+        <h2>Gazirani sokovi</h2>
+
+        <div class="item" data-price="3">
+            <span>Coca-Cola (3 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
         </div>
-        <div class="controls" onclick="event.stopPropagation()">
-            <button onclick="changeQty(this,-1)">-</button>
-            <span class="qty">0</span>
-            <button onclick="changeQty(this,1)">+</button>
+
+        <div class="item" data-price="3">
+            <span>Fanta (3 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
+
+        <div class="item" data-price="3">
+            <span>Sprite (3 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
         </div>
     </div>
 
-    <div class="item" data-price="3.5" onclick="openItem('latte')">
-        <img src="images/latte.jpg">
-        <div class="info">
-            <span data-key="latte">Latte</span>
-            <span class="price">3.5 KM</span>
+    <!-- NEGAZIRANI -->
+    <div class="menu-section">
+        <h2>Negazirani sokovi</h2>
+
+        <div class="item" data-price="3">
+            <span>Sok od narandže (3 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
         </div>
-        <div class="controls" onclick="event.stopPropagation()">
-            <button onclick="changeQty(this,-1)">-</button>
-            <span class="qty">0</span>
-            <button onclick="changeQty(this,1)">+</button>
+
+        <div class="item" data-price="3">
+            <span>Sok od jabuke (3 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
         </div>
     </div>
+
+    <!-- VODA -->
+    <div class="menu-section">
+        <h2>Voda</h2>
+
+        <div class="item" data-price="2">
+            <span>Negazirana voda (2 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
+
+        <div class="item" data-price="2">
+            <span>Gazirana voda (2 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CIJEĐENI -->
+    <div class="menu-section">
+        <h2>Prirodni cijeđeni sokovi</h2>
+
+        <div class="item" data-price="5">
+            <span>Cijeđena narandža (5 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
+
+        <div class="item" data-price="4">
+            <span>Limunada (4 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENERGETSKI -->
+    <div class="menu-section">
+        <h2>Energetski napici</h2>
+
+        <div class="item" data-price="4">
+            <span>Red Bull (4 KM)</span>
+            <div class="controls">
+                <button onclick="changeQty(this,-1)">−</button>
+                <span class="qty">0</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<div class="menu-section">
-    <h2>Sokovi</h2>
-
-    <div class="item" data-price="3" onclick="openItem('orange')">
-        <img src="images/orange.jpg">
-        <div class="info">
-            <span data-key="orange">Sok od narandže</span>
-            <span class="price">3 KM</span>
-        </div>
-        <div class="controls" onclick="event.stopPropagation()">
-            <button onclick="changeQty(this,-1)">-</button>
-            <span class="qty">0</span>
-            <button onclick="changeQty(this,1)">+</button>
-        </div>
-    </div>
-
-    <div class="item" data-price="3" onclick="openItem('apple')">
-        <img src="images/apple.jpg">
-        <div class="info">
-            <span data-key="apple">Sok od jabuke</span>
-            <span class="price">3 KM</span>
-        </div>
-        <div class="controls" onclick="event.stopPropagation()">
-            <button onclick="changeQty(this,-1)">-</button>
-            <span class="qty">0</span>
-            <button onclick="changeQty(this,1)">+</button>
-        </div>
-    </div>
-</div>
-
-<div class="menu-section">
-    <h2>Deserti</h2>
-
-    <div class="item" data-price="5" onclick="openItem('cake')">
-        <img src="images/cake.jpg">
-        <div class="info">
-            <span data-key="cake">Čokoladna torta</span>
-            <span class="price">5 KM</span>
-        </div>
-        <div class="controls" onclick="event.stopPropagation()">
-            <button onclick="changeQty(this,-1)">-</button>
-            <span class="qty">0</span>
-            <button onclick="changeQty(this,1)">+</button>
-        </div>
-    </div>
-
-    <div class="item" data-price="5.5" onclick="openItem('cheesecake')">
-        <img src="images/cheesecake.jpg">
-        <div class="info">
-            <span data-key="cheesecake">Cheesecake</span>
-            <span class="price">5.5 KM</span>
-        </div>
-        <div class="controls" onclick="event.stopPropagation()">
-            <button onclick="changeQty(this,-1)">-</button>
-            <span class="qty">0</span>
-            <button onclick="changeQty(this,1)">+</button>
-        </div>
-    </div>
-</div>
-
-    <div class="total-bar">
-    <span><span data-key="total">Ukupno:</span> <span id="totalPrice">0</span> KM</span>
-</div>
-
-</div>
-
-<!-- MODAL -->
-<div id="itemModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeItem()">&times;</span>
-        <img id="itemImg">
-        <h3 id="itemTitle"></h3>
-        <p id="itemDesc"></p>
-    </div>
+<div class="total-bar">
+    Ukupno: <span id="total">0</span> KM
 </div>
 
 <script src="script.js"></script>
